@@ -1,0 +1,120 @@
+@import 'styles/global.scss';
+
+$nav-bar-height: 50px;
+$side-drawer-open-width: 180px;
+$side-drawer-close-width: 50px;
+
+#viraspace-logo {
+    height: 65px;
+}
+
+.nav-bar-btn {
+    color: white;
+    padding: 8px;
+    margin: 0 20px;
+    font-size: $font-size-2;
+    font-weight: $font-bold;
+    border: none;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out, background-color 0.2s linear;
+}
+
+.side-drawer-open {
+    transition: all 0.3s ease-in-out;
+    width: $side-drawer-open-width !important;
+
+    .toggle-side-drawer-btn {
+        left: $side-drawer-open-width - 10px !important;
+    }
+}
+
+.hide-text {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.side-drawer {
+    position: fixed;
+    width: $side-drawer-close-width;
+    padding: 2% 12px;
+    height: 100% - 4%; // need to compensate for the 2% padding on top and bottom
+    top: 0;
+    background-color: $primary-white-1;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    transition: all 0.3s ease-in-out;
+
+    .toggle-side-drawer-btn {
+        transition: all 0.3s ease-in-out;
+        position: sticky;
+        top: $nav-bar-height + 50px;
+        font-size: $font-size-3;
+        left: 20px;
+    }
+
+    .side-drawer-btns {
+        display: flex;
+        flex-direction: column;
+        padding-top: 140px;
+
+        .side-drawer-btn-selected {
+            background: rgba(255, 208, 120, 0.763);
+        }
+
+        .side-drawer-btn {
+            text-align: left;
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            margin: 8px 0;
+            border-radius: 5px;
+            font-size: $font-size-3;
+            color: $primary-black-2;
+
+            .side-drawer-btn-text {
+                transition: all 0.3s ease-in-out;
+                margin-left: 10px;
+                font-size: $font-size-2;
+            }
+        }
+    }
+}
+
+.color-nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    padding: 12px 1%;
+    width: 100% - 2%; // need to compensate for the 1% padding on left and right
+    height: $nav-bar-height;
+    top: 0;
+    background-color: $primary-purple-1;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+
+    .profile-icon {
+        color: $primary-white-1;
+        padding: 10px;
+    }
+
+    .nav-bar-search-bar-container {
+        display: inline-block;
+
+        .nav-bar-search-bar {
+            color: black;
+            background: $primary-white-1;
+            padding: 3px;
+            border-radius: 5px;
+            min-width: 250px;
+            font-size: $font-size-2;
+
+            input {
+                background: $primary-white-1;
+                border: none;
+                width: 80%;
+            }
+        }
+    }
+}

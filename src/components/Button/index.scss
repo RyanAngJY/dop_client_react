@@ -1,0 +1,35 @@
+@import "styles/global.scss";
+
+.custom-btn {
+    padding: 11px;
+    margin-right: 9px;
+    font-size: $font-size-0;
+    font-weight: $font-bold;
+    border: none;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out, background-color 0.2s linear
+}
+
+
+.dark-btn {
+    background: $primary-purple-1;
+    color: $primary-white-1;
+    border: 1px solid $primary-purple-1;
+
+    &:hover {
+        background: none;
+        color: $primary-purple-1
+    }
+}
+
+
+.light-btn {
+    border: 1px solid $primary-purple-1;
+    color: $primary-purple-1;
+
+    &:hover {
+        background: $primary-purple-1;
+        color: $primary-white-1
+    }
+}
