@@ -13,7 +13,7 @@ const Home = props => {
                 .get('/')
                 .then(res => {
                     console.log(res)
-                    setData(res.data.hello)
+                    setData(JSON.stringify(res.data))
                 })
                 .catch(err => {
                     console.log(err)

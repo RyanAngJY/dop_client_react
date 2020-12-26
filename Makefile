@@ -8,3 +8,7 @@ start:
 push:
 	make build
 	docker push ryanang/frontend_server:latest
+
+dev_start:
+	npm start
+	
