@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+    frontend:
+        build:
+            context: .
+            dockerfile: Dockerfile.local
+        environment:
+            - REACT_APP_BACKEND_BASE_URL=http://docker.for.mac.localhost:8000/api
+
+        ports:
+            - '3000:3000'
+        volumes:
+            - ./src:/app/src # mount the src dir to /app/src dir in the container (so that when any changes made locally will be reflected in the container). Note that we cannot mount the entire current folder as it means that node_modules will also be overridden - which causes some issues
