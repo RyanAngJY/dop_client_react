@@ -10,7 +10,7 @@ RUN npm install
 
 COPY . .
 
-ENV REACT_APP_BACKEND_BASE_URL=http://flask-backend-service:8000/api
+ENV REACT_APP_BACKEND_BASE_URL=http://dop-server-flask-service:8000/api
 
 RUN npm run build
 
