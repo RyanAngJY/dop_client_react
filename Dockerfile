@@ -1,3 +1,4 @@
+# Production Docker Image
 # stage1 - build react app first 
 FROM node:12.16.1-alpine3.9 as build
 
