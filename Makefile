@@ -1,4 +1,5 @@
 IMAGE_NAME=ryanang/dop_client_react:latest
+.DEFAULT_GOAL := dev_start # set default target to run
 
 build:
 	docker build -t $(IMAGE_NAME) .
