@@ -4,6 +4,7 @@ IMAGE_NAME=ryanang/dop_client_react:latest
 # ======== Development ========
 # For development server
 dev_start:
+	docker-compose down
 	docker-compose up
 
 # For development server (on Docker)
@@ -20,5 +21,6 @@ shell: build_local # to enter the shell of the image
 build:
 	docker build -t $(IMAGE_NAME) .
 
-push_to_docker_hub: build
+# push to docker hub
+push: build
 	docker push $(IMAGE_NAME)
