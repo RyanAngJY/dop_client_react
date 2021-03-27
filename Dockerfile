@@ -10,7 +10,8 @@ RUN npm install
 
 COPY . .
 
-ENV REACT_APP_BACKEND_BASE_URL=http://dop-server-flask-service:8000/api
+# Ryan TODO: update to proper exposed kubernetes endpoint
+ENV REACT_APP_BACKEND_BASE_URL=http://localhost:30002/api
 
 RUN npm run build
 
