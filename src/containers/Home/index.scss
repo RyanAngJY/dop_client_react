@@ -1,9 +1,19 @@
 @import "styles/global.scss";
 
+p {
+    font-size: 15px !important;
+    margin: 5px;
+} 
+
+button {
+    border: 1px solid black !important
+}
+
+.field {
+    font-weight: bold;
+}
+
 .home-page {
+    padding-left: 20px;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
 }
