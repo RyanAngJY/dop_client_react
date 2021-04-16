@@ -6,6 +6,7 @@ services:
             context: .
             dockerfile: Dockerfile.local
         environment:
+            - REACT_APP_SOCKET_BASE_URL=http://docker.for.mac.localhost:8000/
             - REACT_APP_BACKEND_BASE_URL=http://docker.for.mac.localhost:8000/api
 
         ports:
