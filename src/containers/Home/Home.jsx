@@ -25,6 +25,7 @@ class SocketBoard extends React.Component {
             reconnection: true,
         });
         this.defaultSocket.on("myCustomResponseMessage", message => {
+            console.log("myCustomResponseMessage")
             this.setState({'socketData': message.data })
         })
         this.defaultSocket.on("isConsumerWorking", message => {
@@ -32,30 +33,36 @@ class SocketBoard extends React.Component {
             this.setState({'isConsumerWorking': "YES" })
         })
         this.namespaceSocket.on("myCustomResponseMessage", message => {
+            console.log("myCustomResponseMessage")
             this.setState({'namespaceSocketData': message.data })
         })
         this.namespaceSocket.on("broadcastedMessage", message => {
+            console.log("broadcastedMessage")
             this.setState({'broadcastedSocketData': message.data })
         })
     }
 
     emitMessage = () => {
+        console.log("emitMessage")
         this.defaultSocket.emit("message", {'data': 'emitMessage'})
     }
 
     emitCustomMessage = () => {
+        console.log("emitCustomMessage")
         this.defaultSocket.emit("custom_message", {'data': 'emitCustomMessage'})
     }
 
     emitToNamespace = () => {
+        console.log("emitToNamespace")
         this.namespaceSocket.emit("message", {'data': 'emitToNamespace'})
     }
 
     render() {
         return (
             <>
-                <p><span className="field">Is Consumer Working: </span>{this.state.isConsumerWorking}</p>
-                <p><span className="field">Data: </span>{this.state.socketData}</p>
+                <p><span className="field">Is Kafka Consumer Working: </span>{this.state.isConsumerWorking}</p>
+                <p><span className="field">Is Default Socket Connected: </span>{this.state.socketData ? "Yes" : "No"}</p>
+                <p><span className="field">Socket Data: </span>{this.state.socketData}</p>
                 <p><span className="field">Namespace Data: </span>{this.state.namespaceSocketData}</p>
                 <p><span className="field">Broadcasted Data: </span>{this.state.broadcastedSocketData}</p>
                 <button onClick={this.emitMessage}> Emit Message </button>

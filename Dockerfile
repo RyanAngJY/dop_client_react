@@ -11,8 +11,8 @@ RUN npm install
 COPY . .
 
 # Ryan TODO: update to proper exposed kubernetes endpoint
-ENV REACT_APP_BACKEND_BASE_URL=http://localhost:30002/api
-ENV REACT_APP_SOCKET_BASE_URL=http://localhost:30002/
+ENV REACT_APP_BACKEND_BASE_URL=http://192.168.64.2:30002/api
+ENV REACT_APP_SOCKET_BASE_URL=http://192.168.64.2:30002/
 
 RUN npm run build
 
